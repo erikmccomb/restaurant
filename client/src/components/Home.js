@@ -1,7 +1,14 @@
 import React from 'React';
+import axios from 'axios';
 
-const Home =() => {
-  <h1>Home</h1>
+class Home extends React.Component {
+  state = { dishes = [] }; 
+
+  componentDidMount() {
+    axios.get('/api/dishes')
+      .then(res => this.setState( { dishes: res.data } ))
+  }
+
 }
 
 export default Home;
