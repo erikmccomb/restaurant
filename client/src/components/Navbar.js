@@ -1,11 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+const styles = {
+  active: { 
+    textDecoration: "underline", 
+    fontWeight: "bold",
+    color: "black"
+  }
+}
 
 const Navbar = () => {
   <nav>
-    <Link to="/">Home</Link>
+    <NavLink activeStyle={styles.active} to="/">Home</NavLink>
     {' '}
-    <Link to="/about">About</Link>
+    <NavLink activeStyle={styles.active} to="/about">About</NavLink>
   </nav>
 } 
 
